@@ -13,6 +13,7 @@
     <artifactId>pet-clinic-data</artifactId>
 
     <properties>
+        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -57,7 +58,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <skip>true</skip>
+<!--                    <skip>true</skip>-->
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
