@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>List of Vets</title>
 </head>
 <body>
 <!--/*@thymesVar id="vet" type="guru.springframework.sfgpetclinic.model.Vet"*/-->
-<h2 th:text="Veterinarians">Veterinarians</h2>
-<table class="table table-striped">
+<h2>Veterinarians</h2>
+
+<table id="vets" class="table table-striped">
     <thead>
     <tr>
-        <th> Id </th>
-        <th> FirstName </th>
-        <th> LastName </th>
+        <th>Name</th>
+        <th>Specialties</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:if="${vets.empty}">
-        <td colspan="2"> No Vets Available </td>
-    </tr>
     <tr th:each="vet : ${vets}">
-        <td><span th:text="${vet.id}"> Id </span></td>
-        <td><span th:text="${vet.firstName}"> FirstName </span></td>
-        <td><span th:text="${vet.lastName}"> LastName </span></td>
+        <td th:text="${vet.firstName + ' ' + vet.lastName}"></td>
+        <td><span th:each="specialty : ${vet.specialities}"
+                  th:text="${specialty.description + ' '}" /> <span
+                th:if="${vet?.specialities?.size() == 0}">none</span></td>
     </tr>
     </tbody>
 </table>
