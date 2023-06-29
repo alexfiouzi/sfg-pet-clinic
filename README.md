@@ -1,2 +1,2 @@
-# sfg-pet-clinic
-SFG Pet Clinic - Spring Boot Application
+# Spring Boot Pet-clinic Application
+SFG Pet Clinic
